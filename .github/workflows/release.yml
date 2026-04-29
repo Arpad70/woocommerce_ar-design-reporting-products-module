@@ -1,0 +1,60 @@
+name: Release Products Module
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Verify Build
+        run: |
+          find . -maxdepth 1 -name '*.php' -print0 | xargs -0 -n1 php -l
+          php scripts/verify-version-consistency.php
+
+      - name: Resolve Version
+        id: version
+        run: |
+          VERSION="$(tr -d '\r\n' < VERSION)"
+          TAG="v$VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref_name }}" != "$TAG" ]; then
+            echo "Git tag does not match VERSION file. Expected $TAG but got ${{ github.ref_name }}." >&2
+            exit 1
+          fi
+
+      - name: Build Release Zip
+        run: |
+          rm -rf /tmp/ar-design-reporting-products-module-release
+          mkdir -p /tmp/ar-design-reporting-products-module-release/ar-design-reporting-products-module
+          rsync -a ./ /tmp/ar-design-reporting-products-module-release/ar-design-reporting-products-module/ --exclude-from=.distignore
+          cd /tmp/ar-design-reporting-products-module-release
+          zip -r ar-design-reporting-products-module.zip ar-design-reporting-products-module
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: AR Design Reporting - Products Module ${{ steps.version.outputs.tag }}
+          generate_release_notes: true
+          target_commitish: ${{ github.sha }}
+          files: |
+            /tmp/ar-design-reporting-products-module-release/ar-design-reporting-products-module.zip

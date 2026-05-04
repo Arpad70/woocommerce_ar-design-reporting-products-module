@@ -56,6 +56,7 @@ final class ArDesignReportingProductsModule
 			'id' => 'products_reporting',
 			'title' => __('Produktový reporting', 'ar-design-reporting-products-module'),
 			'slot' => 'primary',
+			'dashboard_tab' => 'business_performance',
 			'priority' => 20,
 			'capability' => 'manage_woocommerce',
 			'render_callback' => array($this, 'renderDashboardSection'),
@@ -130,7 +131,7 @@ final class ArDesignReportingProductsModule
 		echo '<div>';
 		echo '<h3 class="ard-heading-reset">' . esc_html__('Najpredávanejšie produkty', 'ar-design-reporting-products-module') . '</h3>';
 		echo '<div class="ard-prm-table-wrap">';
-		echo '<table class="widefat striped ard-table ard-prm-table">';
+		echo '<table class="widefat striped ard-table ard-prm-table" data-ard-prm-paginated-table="top-sellers">';
 		echo '<thead><tr><th>' . esc_html__('Produkt', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('SKU', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('Predané ks', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('Obrat', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('Objednávky', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('Sklad teraz', 'ar-design-reporting-products-module') . '</th></tr></thead>';
 		echo '<tbody>';
 		if (empty($top_sellers)) {
@@ -150,12 +151,18 @@ final class ArDesignReportingProductsModule
 				echo '</tr>';
 			}
 		}
-		echo '</tbody></table></div></div>';
+		echo '</tbody></table></div>';
+		echo '<div class="ard-prm-pagination" data-ard-prm-pagination="top-sellers" aria-label="' . esc_attr__('Stránkovanie top predajov produktov', 'ar-design-reporting-products-module') . '">';
+		echo '<button type="button" class="button" data-ard-prm-page-action="prev">' . esc_html__('Predchádzajúca', 'ar-design-reporting-products-module') . '</button>';
+		echo '<span class="ard-prm-page-info" data-ard-prm-page-info></span>';
+		echo '<button type="button" class="button" data-ard-prm-page-action="next">' . esc_html__('Ďalšia', 'ar-design-reporting-products-module') . '</button>';
+		echo '<label class="ard-prm-page-size"><span>' . esc_html__('Na stránku', 'ar-design-reporting-products-module') . ':</span><select data-ard-prm-page-size><option value="5" selected>5</option><option value="10">10</option><option value="20">20</option><option value="50">50</option></select></label>';
+		echo '</div></div>';
 
 		echo '<div>';
 		echo '<h3 class="ard-heading-reset">' . esc_html__('Najviac produktov skladom', 'ar-design-reporting-products-module') . '</h3>';
 		echo '<div class="ard-prm-table-wrap">';
-		echo '<table class="widefat striped ard-table ard-prm-table">';
+		echo '<table class="widefat striped ard-table ard-prm-table" data-ard-prm-paginated-table="top-stock">';
 		echo '<thead><tr><th>' . esc_html__('Produkt', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('SKU', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('Sklad', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('Predané ks v období', 'ar-design-reporting-products-module') . '</th><th>' . esc_html__('Predalo sa?', 'ar-design-reporting-products-module') . '</th></tr></thead>';
 		echo '<tbody>';
 		if (empty($top_stock)) {
@@ -174,7 +181,13 @@ final class ArDesignReportingProductsModule
 				echo '</tr>';
 			}
 		}
-		echo '</tbody></table></div></div>';
+		echo '</tbody></table></div>';
+		echo '<div class="ard-prm-pagination" data-ard-prm-pagination="top-stock" aria-label="' . esc_attr__('Stránkovanie top skladových produktov', 'ar-design-reporting-products-module') . '">';
+		echo '<button type="button" class="button" data-ard-prm-page-action="prev">' . esc_html__('Predchádzajúca', 'ar-design-reporting-products-module') . '</button>';
+		echo '<span class="ard-prm-page-info" data-ard-prm-page-info></span>';
+		echo '<button type="button" class="button" data-ard-prm-page-action="next">' . esc_html__('Ďalšia', 'ar-design-reporting-products-module') . '</button>';
+		echo '<label class="ard-prm-page-size"><span>' . esc_html__('Na stránku', 'ar-design-reporting-products-module') . ':</span><select data-ard-prm-page-size><option value="5" selected>5</option><option value="10">10</option><option value="20">20</option><option value="50">50</option></select></label>';
+		echo '</div></div>';
 		echo '</div>';
 
 		echo '<div class="ard-prm-chart-grid">';
@@ -722,20 +735,74 @@ final class ArDesignReportingProductsModule
 		.ard-prm-chart-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:14px; }
 		.ard-prm-chart-card { min-height:260px; padding:10px 12px; }
 		.ard-prm-chart-card h3 { margin-top:2px; margin-bottom:10px; }
-		.ard-prm-chart-empty { color:#64748b; font-size:12px; padding:12px 0 0; }
-		@media (max-width: 900px) {
-			.ard-prm-grid, .ard-prm-chart-grid { grid-template-columns:1fr; }
-			.ard-prm-table { min-width:640px; font-size:12px; }
-		}
-		</style>';
+			.ard-prm-chart-empty { color:#64748b; font-size:12px; padding:12px 0 0; }
+			.ard-prm-pagination { margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+			.ard-prm-page-info { font-size:12px; color:#475569; min-width:110px; text-align:center; }
+			.ard-prm-page-size { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#475569; }
+			.ard-prm-page-size select { min-width:72px; }
+			@media (max-width: 900px) {
+				.ard-prm-grid, .ard-prm-chart-grid { grid-template-columns:1fr; }
+				.ard-prm-table { min-width:640px; font-size:12px; }
+			}
+			</style>';
 
 		echo '<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			var root = document.querySelector(".ard-reporting-dashboard");
-			if (!root) { return; }
-			(function normalizeProductLinks() {
-				var anchors = root.querySelectorAll("a[data-ard-prm-product-link]");
-				if (!anchors.length) { return; }
+			document.addEventListener("DOMContentLoaded", function () {
+				var root = document.querySelector(".ard-reporting-dashboard");
+				if (!root) { return; }
+				function initPaginatedTable(tableKey) {
+					var table = root.querySelector("[data-ard-prm-paginated-table=\"" + tableKey + "\"]");
+					var pager = root.querySelector("[data-ard-prm-pagination=\"" + tableKey + "\"]");
+					if (!table || !pager) { return; }
+					var tbody = table.querySelector("tbody");
+					if (!tbody) { return; }
+					var rows = Array.prototype.slice.call(tbody.querySelectorAll("tr"));
+					if (!rows.length) { return; }
+					var prevBtn = pager.querySelector("[data-ard-prm-page-action=\"prev\"]");
+					var nextBtn = pager.querySelector("[data-ard-prm-page-action=\"next\"]");
+					var info = pager.querySelector("[data-ard-prm-page-info]");
+					var sizeSelect = pager.querySelector("[data-ard-prm-page-size]");
+					if (!prevBtn || !nextBtn || !info || !sizeSelect) { return; }
+					var pageSize = Math.max(1, parseInt(sizeSelect.value || "5", 10) || 5);
+					var currentPage = 1;
+					function renderPage() {
+						var totalRows = rows.length;
+						var totalPages = Math.max(1, Math.ceil(totalRows / pageSize));
+						if (currentPage > totalPages) { currentPage = totalPages; }
+						var start = (currentPage - 1) * pageSize;
+						var end = start + pageSize;
+						rows.forEach(function (row, index) {
+							row.style.display = (index >= start && index < end) ? "" : "none";
+						});
+						info.textContent = "Strana " + currentPage + " / " + totalPages;
+						prevBtn.disabled = currentPage <= 1;
+						nextBtn.disabled = currentPage >= totalPages;
+					}
+					prevBtn.addEventListener("click", function () {
+						if (currentPage > 1) {
+							currentPage -= 1;
+							renderPage();
+						}
+					});
+					nextBtn.addEventListener("click", function () {
+						var totalPages = Math.max(1, Math.ceil(rows.length / pageSize));
+						if (currentPage < totalPages) {
+							currentPage += 1;
+							renderPage();
+						}
+					});
+					sizeSelect.addEventListener("change", function () {
+						pageSize = Math.max(1, parseInt(sizeSelect.value || "5", 10) || 5);
+						currentPage = 1;
+						renderPage();
+					});
+					renderPage();
+				}
+				initPaginatedTable("top-sellers");
+				initPaginatedTable("top-stock");
+				(function normalizeProductLinks() {
+					var anchors = root.querySelectorAll("a[data-ard-prm-product-link]");
+					if (!anchors.length) { return; }
 				anchors.forEach(function (anchor) {
 					var rawHref = anchor.getAttribute("href") || "";
 					if (!rawHref) { return; }

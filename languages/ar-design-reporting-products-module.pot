@@ -1,0 +1,292 @@
+# Copyright (C) 2026 AR Design
+# This file is distributed under the same license as the AR Design Reporting - Products Module plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: AR Design Reporting - Products Module 0.3.29\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ar-design-reporting-products-module\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-05-12T15:09:03+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ar-design-reporting-products-module\n"
+
+#. Plugin Name of the plugin
+#: ar-design-reporting-products-module.php
+msgid "AR Design Reporting - Products Module"
+msgstr ""
+
+#. Description of the plugin
+#: ar-design-reporting-products-module.php
+msgid "Samostatný produktový modul pre dashboard AR Design Reporting (predaje produktov, sklad, história skladu, exporty XLSX)."
+msgstr ""
+
+#. Author of the plugin
+#: ar-design-reporting-products-module.php
+msgid "AR Design"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:80
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:57
+msgid "Produktový reporting"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:139
+#: ar-design-reporting-products-module.php:323
+#: ar-design-reporting-products-module.php:1032
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:115
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:287
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:942
+#, php-format
+msgid "Produkt #%d"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:144
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:120
+#, php-format
+msgid "Aktuálny sklad: %s"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:151
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:127
+msgid "Najpredávanejšie produkty, zásoby, historický sklad a exporty v samostatnom module."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:155
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:131
+msgid "Najpredávanejšie produkty"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:158
+#: ar-design-reporting-products-module.php:189
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:134
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:159
+msgid "Produkt"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:158
+#: ar-design-reporting-products-module.php:189
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:134
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:159
+msgid "SKU"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:158
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:134
+msgid "Predané ks"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:158
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:134
+msgid "Obrat"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:158
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:134
+msgid "Objednávky"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:158
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:134
+msgid "Sklad teraz"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:161
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:137
+msgid "Za zvolené obdobie nie sú dostupné predaje produktov."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:178
+msgid "Stránkovanie top predajov produktov"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:179
+#: ar-design-reporting-products-module.php:209
+msgid "Predchádzajúca"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:181
+#: ar-design-reporting-products-module.php:211
+msgid "Ďalšia"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:182
+#: ar-design-reporting-products-module.php:212
+msgid "Na stránku"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:186
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:156
+msgid "Najviac produktov skladom"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:189
+#: ar-design-reporting-products-module.php:241
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:159
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:205
+msgid "Sklad"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:189
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:159
+msgid "Predané ks v období"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:189
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:159
+msgid "Predalo sa?"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:192
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:162
+msgid "Produkty so skladom nie sú dostupné."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:203
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:173
+msgid "Ano"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:203
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:173
+msgid "Ne"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:208
+msgid "Stránkovanie top skladových produktov"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:217
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:181
+#, php-format
+msgid "Predaje produktu v čase: %s"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:217
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:181
+msgid "Predaje produktov v čase"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:218
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:182
+msgid "Historický sklad produktu"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:225
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:189
+msgid "Drill-down produktu"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:235
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:199
+msgid "ID produktu"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:236
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:200
+msgid "Načítať detail"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:241
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:205
+msgid "Čas (GMT)"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:241
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:205
+msgid "Stav skladu"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:244
+#: ar-design-reporting-products-module.php:740
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:208
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:704
+#, php-format
+msgid "Pre %s nie je v zvolenom období dostupná história skladu."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:244
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:208
+msgid "Vyber produkt pre zobrazenie historického skladu."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:265
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:229
+msgid "Exportovať produkty (XLSX)"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:273
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:237
+msgid "Exportovať históriu skladu produktu (XLSX)"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:316
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:280
+msgid "Nie je zvolený produkt pre export histórie skladu."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:740
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:704
+#, php-format
+msgid "produkt #%d"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:741
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:705
+msgid "Vyberte produkt pre zobrazenie historického skladu."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:999
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:909
+msgid "Na vykonanie tejto akcie nemáte oprávnenie."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1050
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:960
+msgid "Skladom"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1051
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:961
+msgid "Vypredané"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1052
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:962
+msgid "Na objednávku"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1056
+#: ar-design-reporting-products-module.php:1062
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:966
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:972
+msgid "Nevyplněno"
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1088
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:998
+msgid "XLSX export vyžaduje rozšírenie ZipArchive na serveri."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1093
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:1003
+msgid "Nepodarilo sa pripraviť dočasný súbor pre XLSX export."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1099
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:1009
+msgid "Nepodarilo sa vytvoriť XLSX export."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1311
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:1221
+msgid "Produktový modul pre dashboard AR Design Reporting."
+msgstr ""
+
+#: ar-design-reporting-products-module.php:1312
+#: build/ar-design-reporting-products-module/ar-design-reporting-products-module.php:1222
+msgid "Changelog nie je dostupný."
+msgstr ""

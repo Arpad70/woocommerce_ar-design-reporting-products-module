@@ -2,8 +2,10 @@
 /**
  * Plugin Name: AR Design Reporting - Products Module
  * Description: Samostatný produktový modul pre dashboard AR Design Reporting (predaje produktov, sklad, história skladu, exporty XLSX).
- * Version: 0.3.29
+ * Version: 0.3.30
  * Author: AR Design
+ * Text Domain: ar-design-reporting-products-module
+ * Domain Path: /languages
  * Requires at least: 6.2
  * Requires PHP: 8.0
  * Update URI: https://github.com/Arpad70/woocommerce_ar-design-reporting-products-module
@@ -15,9 +17,30 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-define('ARD_REPORTING_PRODUCTS_MODULE_VERSION', '0.3.29');
+define('ARD_REPORTING_PRODUCTS_MODULE_VERSION', '0.3.30');
 define('ARD_REPORTING_PRODUCTS_MODULE_BASENAME', plugin_basename(__FILE__));
+define('ARD_REPORTING_PRODUCTS_MODULE_PATH', plugin_dir_path(__FILE__));
 define('ARD_REPORTING_PRODUCTS_MODULE_REPOSITORY', 'Arpad70/woocommerce_ar-design-reporting-products-module');
+define('ARD_REPORTING_PRODUCTS_MODULE_TEXT_DOMAIN', 'ar-design-reporting-products-module');
+define('ARD_REPORTING_PRODUCTS_MODULE_SLUG', 'ar-design-reporting-products-module');
+define('ARD_REPORTING_PRODUCTS_MODULE_PLUGIN_NAME', 'AR Design Reporting - Products Module');
+define('ARD_REPORTING_PRODUCTS_MODULE_DESCRIPTION', 'Samostatný produktový modul pre dashboard AR Design Reporting (predaje produktov, sklad, história skladu, exporty XLSX).');
+define('ARD_REPORTING_PRODUCTS_MODULE_ROLLBACK_MESSAGE', 'Aktualizácia AR Design Reporting - Products Module zlyhala. Predchádzajúca verzia bola automaticky obnovená zo zálohy.');
+
+$ardReportingModuleBootstrapConfig = array(
+	'version' => ARD_REPORTING_PRODUCTS_MODULE_VERSION,
+	'basename' => ARD_REPORTING_PRODUCTS_MODULE_BASENAME,
+	'path' => ARD_REPORTING_PRODUCTS_MODULE_PATH,
+	'repository' => ARD_REPORTING_PRODUCTS_MODULE_REPOSITORY,
+	'slug' => ARD_REPORTING_PRODUCTS_MODULE_SLUG,
+	'plugin_name' => ARD_REPORTING_PRODUCTS_MODULE_PLUGIN_NAME,
+	'text_domain' => ARD_REPORTING_PRODUCTS_MODULE_TEXT_DOMAIN,
+	'description' => ARD_REPORTING_PRODUCTS_MODULE_DESCRIPTION,
+	'rollback_message' => ARD_REPORTING_PRODUCTS_MODULE_ROLLBACK_MESSAGE,
+	'register_updater' => false,
+);
+
+require_once ARD_REPORTING_PRODUCTS_MODULE_PATH . 'bootstrap/runtime-skeleton.php';
 
 final class ArDesignReportingProductsModule
 {

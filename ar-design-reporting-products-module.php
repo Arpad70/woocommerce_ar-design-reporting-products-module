@@ -1,14 +1,22 @@
 <?php
 /**
  * Plugin Name: AR Design Reporting - Products Module
+ * Plugin URI: https://github.com/Arpad70/woocommerce_ar-design-reporting-products-module
  * Description: Samostatný produktový modul pre dashboard AR Design Reporting (predaje produktov, sklad, história skladu, exporty XLSX).
- * Version: 0.3.30
+ * Version: 0.3.31
  * Author: AR Design
+ * Author URI: https://arpad-horak.cz
+ * Developer: Arpád Horák
+ * Developer URI: https://arpad-horak.cz
  * Text Domain: ar-design-reporting-products-module
  * Domain Path: /languages
  * Requires at least: 6.2
  * Requires PHP: 8.0
  * Update URI: https://github.com/Arpad70/woocommerce_ar-design-reporting-products-module
+ * WC requires at least: 7.0
+ * WC tested up to: 10.6.1
+ * License: GPLv2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 declare(strict_types=1);
@@ -17,7 +25,7 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-define('ARD_REPORTING_PRODUCTS_MODULE_VERSION', '0.3.30');
+define('ARD_REPORTING_PRODUCTS_MODULE_VERSION', '0.3.31');
 define('ARD_REPORTING_PRODUCTS_MODULE_BASENAME', plugin_basename(__FILE__));
 define('ARD_REPORTING_PRODUCTS_MODULE_PATH', plugin_dir_path(__FILE__));
 define('ARD_REPORTING_PRODUCTS_MODULE_REPOSITORY', 'Arpad70/woocommerce_ar-design-reporting-products-module');

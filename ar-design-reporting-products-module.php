@@ -3,7 +3,7 @@
  * Plugin Name: AR Design Reporting - Products Module
  * Plugin URI: https://github.com/Arpad70/woocommerce_ar-design-reporting-products-module
  * Description: Samostatný produktový modul pre dashboard AR Design Reporting (predaje produktov, sklad, história skladu, exporty XLSX).
- * Version: 0.3.31
+ * Version: 0.3.32
  * Author: AR Design
  * Author URI: https://arpad-horak.cz
  * Developer: Arpád Horák
@@ -25,7 +25,7 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-define('ARD_REPORTING_PRODUCTS_MODULE_VERSION', '0.3.31');
+define('ARD_REPORTING_PRODUCTS_MODULE_VERSION', '0.3.32');
 define('ARD_REPORTING_PRODUCTS_MODULE_BASENAME', plugin_basename(__FILE__));
 define('ARD_REPORTING_PRODUCTS_MODULE_PATH', plugin_dir_path(__FILE__));
 define('ARD_REPORTING_PRODUCTS_MODULE_REPOSITORY', 'Arpad70/woocommerce_ar-design-reporting-products-module');

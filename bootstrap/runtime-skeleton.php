@@ -13,6 +13,11 @@ if (! isset($ardReportingModuleBootstrapConfig) || ! is_array($ardReportingModul
 $config = $ardReportingModuleBootstrapConfig;
 unset($ardReportingModuleBootstrapConfig);
 
+require_once WP_PLUGIN_DIR . '/ar-design-shared-support/includes/updates/ReportingModuleRuntime.php';
+ard_shared_register_reporting_module_update_runtime($config);
+
+return;
+
 add_action('init', static function () use ($config): void {
 	load_plugin_textdomain((string) $config['text_domain'], false, dirname((string) $config['basename']) . '/languages');
 });
